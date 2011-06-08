@@ -86,7 +86,8 @@ PRODUCT_PACKAGES += \
     tiap_loader \
     tiap_cu \
     gps.p920 \
-    acoustics.default
+    acoustics.default \
+    hwprops
 
 # OpenMAX IL configuration
 TI_OMX_POLICY_MANAGER := hardware/ti/omx/system/src/openmax_il/omx_policy_manager
