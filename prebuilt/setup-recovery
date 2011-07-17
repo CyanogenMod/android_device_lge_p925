@@ -1,0 +1,4 @@
+#!/system/bin/sh
+
+## Set "boot-recovery" flag
+echo "518 R 1" > /sys/kernel/kobject_lge_nvdata/dynamic_nvdata_raw_write

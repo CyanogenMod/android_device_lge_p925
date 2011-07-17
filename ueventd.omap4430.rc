@@ -1,0 +1,16 @@
+## Permissions taken from original init.rc
+/dev/syslink-proc4430 0660 media media
+/dev/syslink-procmgr 0660 media media
+/dev/notifyducatidrv 0660 media media
+/dev/ipcnotify 0660 media media
+/dev/syslink_ipc 0660 media media
+/dev/syslink_platform 0660 media media
+/dev/omap-rproc0 0660 media media
+/dev/omap-rproc1 0660 media media
+/dev/omap-rproc2 0660 media media
+/dev/iovmm-omap0 0660 media media
+/dev/iovmm-omap1 0660 media media
+/dev/omap-devh0 0660 media media
+/dev/omap-devh1 0660 media media
+/dev/omap-devh2 0660 media media
+/dev/pvrsrvkm 0666 system system
