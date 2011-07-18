@@ -72,6 +72,7 @@ EOF
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.omap4430.so:system/lib/hw/gralloc.omap4430.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/overlay.omap4.so:system/lib/hw/overlay.omap4.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.omap4.so:system/lib/hw/lights.omap4.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.omap4.so:system/lib/hw/sensors.omap4.so
 
 # EGL
@@ -92,6 +93,25 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpvrPVR2D_FLIPWSEGL.so:system/lib/libpvrPVR2D_FLIPWSEGL.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpvrPVR2D_FRONTWSEGL.so:system/lib/libpvrPVR2D_FRONTWSEGL.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/pvrsrvinit:system/bin/pvrsrvinit
+
+# Sensors
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/mpld:system/bin/mpld
+
+# Wifi
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/firmware.bin:system/etc/wifi/firmware.bin \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/tiwlan.ini:system/etc/wifi/tiwlan.ini \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/softap/firmware_ap.bin:system/etc/wifi/softap/firmware_ap.bin \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/softap/tiwlan_ap.ini:system/etc/wifi/softap/tiwlan_ap.ini \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/tiwlan_drv.ko:system/etc/wifi/tiwlan_drv.ko \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/softap/tiap_drv.ko:system/etc/wifi/softap/tiap_drv.ko
+
+# RIL
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/lge-ril.so:system/lib/lge-ril.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libril.so:system/lib/libril.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libini.so:system/lib/libini.so
 
 EOF
 

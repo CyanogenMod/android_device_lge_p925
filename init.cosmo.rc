@@ -113,6 +113,43 @@ loglevel 3
     chmod 0777 /dev/timer
 
 ### LGE STUFFS
+    chown root radio /proc/cmdline
+    chown system system /sys/devices/platform/i2c_omap.2/i2c-2/2-0020/gripsuppression
+    chown system system /sys/devices/platform/i2c_omap.2/i2c-2/2-0020/handsuppression
+    chown system radio /sys/devices/platform/i2c_omap.2/i2c-2/2-0036/brightness
+    chown system system /sys/devices/platform/i2c_omap.2/i2c-2/2-0036/enable
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/atime
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/ptime
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/wtime
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/ppcount
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/pers
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/pilt
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/piht
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/GA
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/DF
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/pdata
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/interrupt
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/proxidata
+    chown system system /sys/devices/platform/i2c_omap.3/i2c-3/3-0039/luxdata
+    chown system radio /sys/devices/platform/keypad_led/leds/keyboard-backlight/brightness
+    chown system radio /sys/devices/platform/omap-keypad/key_test_mode
+    chown system radio /sys/devices/platform/i2c_omap.4/i2c-4/4-0068/cal_onoff
+    chown system radio /misc/cal.bin
+
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/atime
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/ptime
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/wtime
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/ppcount
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/pers
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/pilt
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/piht
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/GA
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/DF
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/pdata
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/interrupt
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/proxidata
+    chown system system /sys/devices/platform/i2c_omap.4/i2c-4/4-0039/luxdata
+
     chown system system /sys/devices/platform/omapdss/display0/enabled
     chown system system /sys/devices/platform/omapdss/display1/enabled
     chown system system /sys/devices/platform/omapdss/display2/enabled
@@ -323,6 +360,15 @@ on post-fs
     mkdir /data/misc/wifi 0770 wifi wifi
     chmod 0770 /data/misc/wifi
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+# LGE_CHANGE_S Wi-Fi jiwoong.eom@lge.com 20101124 for SoftAP
+    mkdir /data/misc/wifi/softap 0771 wifi wifi
+# LGE_CHANGE_E Wi-Fi jiwoong.eom@lge.com 20101124 for SoftAP
+# Copying hostapd.conf (WLAN soft AP)
+    copy /system/etc/wifi/softap/hostapd.conf /data/misc/wifi/hostapd.conf
+    chown wifi radio /data/misc/wifi
+    mkdir /data/misc/dhcp 0777 dhcp dhcp
+# LGE_CHANGE_E Wi-Fi jiwoong.eom@lge.com 20101124 for SoftAP
+    mkdir /data/misc/wifi/sockets 0771 wifi wifi
     mkdir /data/local 0771 shell shell
     mkdir /data/local/tmp 0771 shell shell
     mkdir /data/local/download 0771 system cache
@@ -613,3 +659,52 @@ service dumpstate /system/bin/dumpstate -s
 service enableusb /system/bin/enable-usb
     disabled
     oneshot
+
+service mpld /system/bin/mpld
+    user system
+    group system
+
+service wlan_loader /system/bin/wlan_loader \
+    -f /system/etc/wifi/firmware.bin -i /system/etc/wifi/tiwlan.ini -e /data/misc/wifi/nvs_map.bin
+     disabled
+     oneshot
+
+service wlan_ap_loader /system/bin/tiap_loader \
+    -i /system/etc/wifi/softap/tiwlan_ap.ini -f /system/etc/wifi/softap/firmware_ap.bin -e /data/misc/wifi/nvs_map.bin
+    disabled
+    oneshot
+
+service ifcfg_ti /system/bin/ifconfig tiwlan0 up
+    disabled
+    oneshot
+
+service wpa_supplicant /system/bin/wpa_supplicant -Dtiwlan0 -itiwlan0 -c/data/misc/wifi/wpa_supplicant.conf
+    socket wpa_tiwlan0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd_tiwlan0 /system/bin/dhcpcd -BKA -d tiwlan0  # LGE_AUTO_IP - enable IPv4LL & ARP (DLNA, 2010.10.19)
+    disabled
+    oneshot
+
+service iprenew_tiwlan0 /system/bin/dhcpcd -n tiwlan0
+    disabled
+    oneshot
+
+service hostapd /system/bin/hostap -dd /data/misc/wifi/hostapd.conf
+    disabled
+    oneshot
+
+service tiwlan_if_down /system/bin/ifconfig tiwlan0 down
+    disabled
+    oneshot
+
+service ifcfg_tiap /system/bin/ifconfig tiap0 192.168.43.1 netmask 255.255.255.0 up
+    disabled
+    oneshot
+
+service rawip_vsnet1 /system/bin/init.vsnet 1
+   user root
+   group radio cache inet misc net_admin net_raw
+   disabled
+   oneshot

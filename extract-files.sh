@@ -20,12 +20,15 @@ DEVICE=p920
 rm -rf ../../../vendor/$VENDOR/$DEVICE
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
 # HAL
 adb pull /system/lib/hw/gralloc.omap4430.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/overlay.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
+adb pull /system/lib/hw/lights.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/sensors.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
 # EGL
@@ -45,13 +48,27 @@ adb pull /system/lib/libpvrPVR2D_FLIPWSEGL.so ../../../vendor/$VENDOR/$DEVICE/pr
 adb pull /system/lib/libpvrPVR2D_FRONTWSEGL.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
 adb pull /system/bin/pvrsrvinit ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/
 
-exit
-# Wifi
-adb pull /system/etc/wl/nvram.txt ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
-adb pull /system/etc/wl/rtecdc-apsta.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
-adb pull /system/etc/wl/rtecdc-mfgtest.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
-adb pull /system/etc/wl/rtecdc.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wl
+## Sensors
+adb pull /system/bin/mpld ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/
 
+# Wifi
+adb pull /system/etc/wifi/firmware.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
+adb pull /system/etc/wifi/tiwlan.ini ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
+adb pull /system/etc/wifi/softap/firmware_ap.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
+adb pull /system/etc/wifi/softap/hostap.conf ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
+adb pull /system/etc/wifi/softap/tiwlan_ap.ini ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
+adb pull /system/bin/wlan_loader ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/bin/wlan_cu ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+adb pull /system/etc/wifi/tiwlan_drv.ko ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
+adb pull /system/etc/wifi/softap/tiap_drv.ko ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
+
+# Radio
+
+adb pull /system/lib/lge-ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libini.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+
+exit
 # GPS
 adb pull /system/lib/libgps.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/bin/glgps ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/
@@ -100,10 +117,8 @@ adb pull /system/bin/lgdrmserver ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/immvibed ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/hdmid ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/btld ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/lib/libril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvos.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvrm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/lge-ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvapputil.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libnvmm_camera.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libcamera.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
