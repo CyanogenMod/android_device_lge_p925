@@ -22,19 +22,21 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/modules/st_drv.ko:root/modules/st_drv.ko \
     $(LOCAL_PATH)/modules/ti_hci_drv.ko:root/modules/ti_hci_drv.ko
 
+## Scripts and confs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/setup-recovery:system/bin/setup-recovery \
     $(LOCAL_PATH)/prebuilt/enable-usb:system/bin/enable-usb \
     $(LOCAL_PATH)/init.cosmo.rc:root/init.rc \
     $(LOCAL_PATH)/init.dummy.rc:root/init.p920.rc \
     $(LOCAL_PATH)/ueventd.omap4430.rc:root/ueventd.omap4430.rc \
-    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab
-    $(LOCAL_PATH)/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+    $(LOCAL_PATH)/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/hostapd.conf:system/etc/wifi/softap/hostapd.conf
 
 # RIL stuffs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/rild:system/bin/rild \
+    $(LOCAL_PATH)/ipc_channels.config:system/etc/ipc_channels.config \
     $(LOCAL_PATH)/init.vsnet:system/bin/init.vsnet
 
 # Permission files
@@ -53,6 +55,27 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
+## Alsa configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/alsa/cards/aliases.conf:system/usr/share/alsa/cards/aliases.conf \
+    $(LOCAL_PATH)/alsa/pcm/surround41.conf:system/usr/share/alsa/pcm/surround41.conf \
+    $(LOCAL_PATH)/alsa/pcm/surround51.conf:system/usr/share/alsa/pcm/surround51.conf \
+    $(LOCAL_PATH)/alsa/pcm/dmix.conf:system/usr/share/alsa/pcm/dmix.conf \
+    $(LOCAL_PATH)/alsa/pcm/side.conf:system/usr/share/alsa/pcm/side.conf \
+    $(LOCAL_PATH)/alsa/pcm/dpl.conf:system/usr/share/alsa/pcm/dpl.conf \
+    $(LOCAL_PATH)/alsa/pcm/surround71.conf:system/usr/share/alsa/pcm/surround71.conf \
+    $(LOCAL_PATH)/alsa/pcm/surround40.conf:system/usr/share/alsa/pcm/surround40.conf \
+    $(LOCAL_PATH)/alsa/pcm/surround50.conf:system/usr/share/alsa/pcm/surround50.conf \
+    $(LOCAL_PATH)/alsa/pcm/default.conf:system/usr/share/alsa/pcm/default.conf \
+    $(LOCAL_PATH)/alsa/pcm/rear.conf:system/usr/share/alsa/pcm/rear.conf \
+    $(LOCAL_PATH)/alsa/pcm/modem.conf:system/usr/share/alsa/pcm/modem.conf \
+    $(LOCAL_PATH)/alsa/pcm/dsnoop.conf:system/usr/share/alsa/pcm/dsnoop.conf \
+    $(LOCAL_PATH)/alsa/pcm/iec958.conf:system/usr/share/alsa/pcm/iec958.conf \
+    $(LOCAL_PATH)/alsa/pcm/center_lfe.conf:system/usr/share/alsa/pcm/center_lfe.conf \
+    $(LOCAL_PATH)/alsa/pcm/front.conf:system/usr/share/alsa/pcm/front.conf \
+    $(LOCAL_PATH)/alsa/alsa.conf:system/usr/share/alsa/alsa.conf \
+    $(LOCAL_PATH)/alsa/asound.conf:system/etc/asound.conf
+
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_LOCALES += hdpi
@@ -61,7 +84,9 @@ PRODUCT_PACKAGES += \
     wlan_loader \
     wlan_cu \
     tiap_loader \
-    tiap_cu
+    tiap_cu \
+    alsa.default \
+    acoustics.default
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := p920

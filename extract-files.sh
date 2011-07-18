@@ -68,6 +68,13 @@ adb pull /system/lib/lge-ril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libril.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libini.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
+# Audio
+adb pull /system/lib/libaudio.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libmmclient.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libacousticengine.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/libaudiomodemgeneric.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/lib/hw/alsa.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
+
 exit
 # GPS
 adb pull /system/lib/libgps.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
