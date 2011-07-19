@@ -708,3 +708,10 @@ service rawip_vsnet1 /system/bin/init.vsnet 1
    group radio cache inet misc net_admin net_raw
    disabled
    oneshot
+
+# load IVA firmware
+service baseimage /system/bin/syslink_daemon.out /system/base_image_sys_m3.xem3 /system/base_image_app_m3.xem3
+     critical
+     user media
+     group media
+     oneshot

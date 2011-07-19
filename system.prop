@@ -2,6 +2,9 @@
 # system.prop for p920
 #
 
+## Enable OMAP stuffs
+com.ti.omap_enhancement=true
+
 ## Wifi interface name
 wifi.interface=tiwlan0
 

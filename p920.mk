@@ -88,6 +88,67 @@ PRODUCT_PACKAGES += \
     alsa.default \
     acoustics.default
 
+# OpenMAX IL configuration
+TI_OMX_POLICY_MANAGER := hardware/ti/omx/system/src/openmax_il/omx_policy_manager
+PRODUCT_COPY_FILES += \
+    $(TI_OMX_POLICY_MANAGER)/src/policytable.tbl:system/etc/policytable.tbl \
+    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml
+
+# Graphics
+# Newer libs are b0rked, use original props
+#PRODUCT_PACKAGES += \
+#    gfx-libs
+
+PRODUCT_PACKAGES += \
+    OMXCore \
+    libOMX_CoreOsal \
+    libOMX_Core \
+    libomx_rpc \
+    libomx_proxy_common \
+    libOMX.TI.DUCATI1.VIDEO.H264D \
+    libOMX.TI.DUCATI1.VIDEO.MPEG4D \
+    libOMX.TI.DUCATI1.VIDEO.VP6D \
+    libOMX.TI.DUCATI1.VIDEO.VP7D \
+    libOMX.TI.DUCATI1.VIDEO.H264E \
+    libOMX.TI.DUCATI1.VIDEO.MPEG4E \
+    libOMX.TI.DUCATI1.IMAGE.JPEGD \
+    libOMX.TI.DUCATI1.VIDEO.CAMERA \
+    libOMX.TI.DUCATI1.MISC.SAMPLE \
+    libOMX.TI.DUCATI1.VIDEO.DECODER
+
+# Tiler and Syslink
+PRODUCT_PACKAGES += \
+    libipcutils \
+    libipc \
+    libnotify \
+    syslink_trace_daemon.out \
+    librcm \
+    libsysmgr \
+    syslink_daemon.out \
+    dmm_daemontest.out \
+    event_listener.out \
+    interm3.out \
+    gateMPApp.out \
+    heapBufMPApp.out \
+    heapMemMPApp.out \
+    listMPApp.out \
+    messageQApp.out \
+    nameServerApp.out \
+    sharedRegionApp.out \
+    memmgrserver.out \
+    notifyping.out \
+    ducati_load.out \
+    procMgrApp.out \
+    slpmresources.out \
+    slpmtransport.out \
+    utilsApp.out \
+    libd2cmap \
+    libtimemmgr
+
+PRODUCT_PACKAGES += \
+    libskiahwdec \
+    libskiahwenc
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := p920
 PRODUCT_DEVICE := p920

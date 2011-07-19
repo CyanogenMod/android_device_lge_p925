@@ -75,6 +75,10 @@ adb pull /system/lib/libacousticengine.so ../../../vendor/$VENDOR/$DEVICE/propri
 adb pull /system/lib/libaudiomodemgeneric.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/hw/alsa.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
+# firmware images
+adb pull /system/base_image_sys_m3.xem3 ../../../vendor/$VENDOR/$DEVICE/proprietary/
+adb pull /system/base_image_app_m3.xem3 ../../../vendor/$VENDOR/$DEVICE/proprietary/
+
 exit
 # GPS
 adb pull /system/lib/libgps.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib

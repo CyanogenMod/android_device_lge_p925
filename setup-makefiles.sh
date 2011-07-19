@@ -120,6 +120,12 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudiomodemgeneric.so:system/lib/libaudiomodemgeneric.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libacousticengine.so:system/lib/libacousticengine.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/alsa.omap4.so:system/lib/hw/alsa.omap4.so
+
+## IVA Firmware
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/base_image_sys_m3.xem3:system/base_image_sys_m3.xem3 \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/base_image_app_m3.xem3:system/base_image_app_m3.xem3
+
 EOF
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/$VENDOR/$DEVICE/BoardConfigVendor.mk
