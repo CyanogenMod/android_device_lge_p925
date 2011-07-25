@@ -507,6 +507,22 @@ on boot
     setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
 
+### LGE GPS
+# gps permissions
+    chown system system /sys/devices/platform/cosmo_gps_gpio/poweron
+    chown system system /sys/devices/platform/cosmo_gps_gpio/reset
+    chown system system /dev/ttyO2
+    mkdir /data/gps
+    chmod 777 /data/gps
+    mkdir /data/gps/var
+    chmod 777 /data/gps/var
+    mkdir /data/gps/var/run
+    chmod 777 /data/gps/var/run
+    mkdir /data/gps/log
+    chmod 777 /data/gps/log
+    mkdir /data/cache
+    chmod 777 /data/cache
+
 # Include extra init file
     import /system/etc/init.local.rc
 
@@ -715,3 +731,8 @@ service baseimage /system/bin/syslink_daemon.out /system/base_image_sys_m3.xem3 
      user media
      group media
      oneshot
+
+## GPS
+service glgps /system/bin/glgps -c /system/etc/gps_brcm_conf.xml
+    user system
+    group net_raw sdcard_rw system net_admin inet

@@ -22,6 +22,7 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/cert
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
@@ -81,10 +82,12 @@ adb pull /system/base_image_app_m3.xem3 ../../../vendor/$VENDOR/$DEVICE/propriet
 adb pull /system/lib/libsysmgr.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libmemmgr.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
-exit
 # GPS
-adb pull /system/lib/libgps.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/etc/cert/lge.cer ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/cert
+adb pull /system/lib/hw/gps.p920.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/bin/glgps ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/
+
+exit
 
 # OMX
 adb pull /system/lib/libdivxdrm.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib

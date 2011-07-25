@@ -2,6 +2,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product-if-exists, vendor/lge/p920/p920-vendor.mk)
 
+$(call inherit-product, device/common/gps/gps_eu.mk)
+
 DEVICE_PACKAGE_OVERLAYS += device/lge/p920/overlay
 
 
@@ -76,6 +78,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/alsa/alsa.conf:system/usr/share/alsa/alsa.conf \
     $(LOCAL_PATH)/alsa/asound.conf:system/etc/asound.conf
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps_brcm_conf.xml:/system/etc/gps_brcm_conf.xml
+
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_LOCALES += hdpi
@@ -86,6 +91,7 @@ PRODUCT_PACKAGES += \
     tiap_loader \
     tiap_cu \
     alsa.default \
+    gps.p920 \
     acoustics.default
 
 # OpenMAX IL configuration
