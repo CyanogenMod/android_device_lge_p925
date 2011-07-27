@@ -14,7 +14,9 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+    $(LOCAL_KERNEL):kernel \
+    $(LOCAL_PATH)/prebuilt/tiwlan_drv.ko:system/etc/wifi/tiwlan_drv.ko \
+    $(LOCAL_PATH)/prebuilt/tiap_drv.ko:system/etc/wifi/tiap_drv.ko
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \

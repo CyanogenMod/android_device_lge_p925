@@ -60,8 +60,6 @@ adb pull /system/etc/wifi/softap/hostap.conf ../../../vendor/$VENDOR/$DEVICE/pro
 adb pull /system/etc/wifi/softap/tiwlan_ap.ini ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
 adb pull /system/bin/wlan_loader ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
 adb pull /system/bin/wlan_cu ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
-adb pull /system/etc/wifi/tiwlan_drv.ko ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
-adb pull /system/etc/wifi/softap/tiap_drv.ko ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
 
 # Radio
 
