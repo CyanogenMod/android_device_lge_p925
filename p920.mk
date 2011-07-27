@@ -18,9 +18,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    $(LOCAL_PATH)/modules/lge_nv.ko:root/modules/lge_nv.ko \
     $(LOCAL_PATH)/modules/fm_drv.ko:root/modules/fm_drv.ko \
-    $(LOCAL_PATH)/modules/lgosp-hid.ko:root/modules/lgosp-hid.ko \
     $(LOCAL_PATH)/modules/st_drv.ko:root/modules/st_drv.ko \
     $(LOCAL_PATH)/modules/ti_hci_drv.ko:root/modules/ti_hci_drv.ko
 
