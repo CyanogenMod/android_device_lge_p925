@@ -552,8 +552,9 @@ service pvrsrvinit /system/bin/pvrsrvinit
 on property:ro.secure=0
     start console
 
+# Lazy way go get things done when /system(/build.prop) is up
 on property:ro.product.device=p920
-    start enableusb
+    start enable-tiwlink
 
 # adbd is controlled by the persist.service.adb.enable system property
 service adbd /sbin/adbd
@@ -672,7 +673,7 @@ service dumpstate /system/bin/dumpstate -s
     disabled
     oneshot
 
-service enableusb /system/bin/enable-usb
+service enable-tiwlink /system/bin/enable-tiwlink
     disabled
     oneshot
 

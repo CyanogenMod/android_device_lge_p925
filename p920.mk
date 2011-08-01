@@ -20,13 +20,13 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    $(LOCAL_PATH)/modules/fm_drv.ko:root/modules/fm_drv.ko \
-    $(LOCAL_PATH)/modules/ti_hci_drv.ko:root/modules/ti_hci_drv.ko
+    $(LOCAL_PATH)/prebuilt/fm_drv.ko:system/lib/modules/fm_drv.ko \
+    $(LOCAL_PATH)/prebuilt/btwilink.ko:system/lib/modules/btwilink.ko
 
 ## Scripts and confs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/setup-recovery:system/bin/setup-recovery \
-    $(LOCAL_PATH)/prebuilt/enable-usb:system/bin/enable-usb \
+    $(LOCAL_PATH)/prebuilt/enable-tiwlink:system/bin/enable-tiwlink \
     $(LOCAL_PATH)/init.cosmo.rc:root/init.rc \
     $(LOCAL_PATH)/init.dummy.rc:root/init.p920.rc \
     $(LOCAL_PATH)/ueventd.omap4430.rc:root/ueventd.omap4430.rc \
@@ -106,6 +106,7 @@ PRODUCT_PACKAGES += \
 
 # Tiler and Syslink
 PRODUCT_PACKAGES += \
+    overlay.p920 \
     libipcutils \
     libipc \
     libnotify \

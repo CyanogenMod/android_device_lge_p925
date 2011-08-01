@@ -1,7 +1,0 @@
-#!/system/bin/sh
-
-sleep 2
-
-insmod /modules/fm_drv.ko
-insmod /modules/ti_hci_drv.ko
-

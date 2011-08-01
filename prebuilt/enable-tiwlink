@@ -1,0 +1,7 @@
+#!/system/bin/sh
+
+sleep 2
+
+insmod /system/lib/modules/fm_drv.ko
+insmod /system/lib/modules/btwilink.ko
+
