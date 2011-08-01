@@ -21,7 +21,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     $(LOCAL_PATH)/modules/fm_drv.ko:root/modules/fm_drv.ko \
-    $(LOCAL_PATH)/modules/st_drv.ko:root/modules/st_drv.ko \
     $(LOCAL_PATH)/modules/ti_hci_drv.ko:root/modules/ti_hci_drv.ko
 
 ## Scripts and confs
@@ -132,7 +131,11 @@ PRODUCT_PACKAGES += \
     slpmtransport.out \
     utilsApp.out \
     libd2cmap \
+    libomap_mm_library_jni \
     libtimemmgr
+
+FRAMEWORKS_BASE_SUBDIRS += \
+	$(addsuffix /java, omapmmlib )
 
 PRODUCT_PACKAGES += \
     libskiahwdec \

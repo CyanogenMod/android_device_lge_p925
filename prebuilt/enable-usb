@@ -2,7 +2,6 @@
 
 sleep 2
 
-insmod /modules/st_drv.ko
 insmod /modules/fm_drv.ko
 insmod /modules/ti_hci_drv.ko
 

@@ -28,7 +28,6 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
 # HAL
 adb pull /system/lib/hw/gralloc.omap4430.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
-adb pull /system/lib/hw/overlay.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/lights.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/sensors.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
@@ -77,8 +76,6 @@ adb pull /system/lib/hw/alsa.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietar
 # firmware images
 adb pull /system/base_image_sys_m3.xem3 ../../../vendor/$VENDOR/$DEVICE/proprietary/
 adb pull /system/base_image_app_m3.xem3 ../../../vendor/$VENDOR/$DEVICE/proprietary/
-adb pull /system/lib/libsysmgr.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libmemmgr.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 
 # GPS
 adb pull /system/etc/cert/lge.cer ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/cert

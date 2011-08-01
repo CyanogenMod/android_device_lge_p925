@@ -71,7 +71,6 @@ EOF
 # HAL
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.omap4430.so:system/lib/hw/gralloc.omap4430.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/overlay.omap4.so:system/lib/hw/overlay.omap4.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.omap4.so:system/lib/hw/lights.omap4.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.omap4.so:system/lib/hw/sensors.omap4.so
 
@@ -121,8 +120,6 @@ PRODUCT_COPY_FILES += \\
 
 ## IVA Firmware
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libsysmgr.so:system/lib/libsysmgr.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmemmgr.so:system/lib/libmemmgr.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/base_image_sys_m3.xem3:system/base_image_sys_m3.xem3 \\
     vendor/__VENDOR__/__DEVICE__/proprietary/base_image_app_m3.xem3:system/base_image_app_m3.xem3
 
