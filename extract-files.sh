@@ -32,17 +32,17 @@ adb pull /system/lib/hw/lights.omap4.so ../../../vendor/$VENDOR/$DEVICE/propriet
 adb pull /system/lib/hw/sensors.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
 ## PVRSGX
-adb pull /system/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
-adb pull /system/lib/egl/libEGL_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
-adb pull /system/lib/egl/libGLESv2_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
-adb pull /system/lib/libIMGegl.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libusc.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/libsrv_um.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
-adb pull /system/lib/libsrv_init.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
-adb pull /system/lib/libpvr2d.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
-adb pull /system/lib/libpvrANDROID_WSEGL.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
-adb pull /system/lib/libPVRScopeServices.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
-adb pull /system/lib/libglslcompiler.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
+adb pull /system/vendor/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
+adb pull /system/vendor/lib/egl/libEGL_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
+adb pull /system/vendor/lib/egl/libGLESv2_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
+adb pull /system/vendor/lib/libIMGegl.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/vendor/lib/libusc.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
+adb pull /system/vendor/lib/libsrv_um.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
+adb pull /system/vendor/lib/libsrv_init.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
+adb pull /system/vendor/lib/libpvr2d.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
+adb pull /system/vendor/lib/libpvrANDROID_WSEGL.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
+adb pull /system/vendor/lib/libPVRScopeServices.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
+adb pull /system/vendor/lib/libglslcompiler.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
 adb pull /system/bin/pvrsrvinit ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/
 
 ## Sensors
