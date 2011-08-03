@@ -27,25 +27,22 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
 # HAL
-adb pull /system/lib/hw/gralloc.omap4430.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
+adb pull /system/lib/hw/gralloc.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/lights.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/sensors.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
-# EGL
+## PVRSGX
 adb pull /system/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 adb pull /system/lib/egl/libEGL_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 adb pull /system/lib/egl/libGLESv2_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
 adb pull /system/lib/libIMGegl.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 adb pull /system/lib/libusc.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-adb pull /system/lib/liblghdmi_cosmo.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
-
-## PVRSGX
 adb pull /system/lib/libsrv_um.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
 adb pull /system/lib/libsrv_init.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
 adb pull /system/lib/libpvr2d.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
 adb pull /system/lib/libpvrANDROID_WSEGL.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
-adb pull /system/lib/libpvrPVR2D_FLIPWSEGL.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
-adb pull /system/lib/libpvrPVR2D_FRONTWSEGL.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
+adb pull /system/lib/libPVRScopeServices.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
+adb pull /system/lib/libglslcompiler.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
 adb pull /system/bin/pvrsrvinit ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/
 
 ## Sensors

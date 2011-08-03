@@ -70,27 +70,23 @@ EOF
 
 # HAL
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.omap4430.so:system/lib/hw/gralloc.omap4430.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.omap4.so:system/lib/hw/gralloc.omap4.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.omap4.so:system/lib/hw/lights.omap4.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.omap4.so:system/lib/hw/sensors.omap4.so
 
-# EGL
-PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so:system/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libEGL_POWERVR_SGX540_120.so:system/lib/egl/libEGL_POWERVR_SGX540_120.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv2_POWERVR_SGX540_120.so:system/lib/egl/libGLESv2_POWERVR_SGX540_120.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liblghdmi_cosmo.so:system/lib/liblghdmi_cosmo.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libIMGegl.so:system/lib/libIMGegl.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libusc.so:system/lib/libusc.so
-
 # PVRSGX
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libsrv_um.so:system/lib/libsrv_um.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libsrv_init.so:system/lib/libsrv_init.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpvr2d.so:system/lib/libpvr2d.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpvrANDROID_WSEGL.so:system/lib/libpvrANDROID_WSEGL.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpvrPVR2D_FLIPWSEGL.so:system/lib/libpvrPVR2D_FLIPWSEGL.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpvrPVR2D_FRONTWSEGL.so:system/lib/libpvrPVR2D_FRONTWSEGL.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so:system/vendor/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libEGL_POWERVR_SGX540_120.so:system/vendor/lib/egl/libEGL_POWERVR_SGX540_120.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv2_POWERVR_SGX540_120.so:system/vendor/lib/egl/libGLESv2_POWERVR_SGX540_120.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libIMGegl.so:system/vendor/lib/libIMGegl.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libusc.so:system/vendor/lib/libusc.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libsrv_um.so:system/vendor/lib/libsrv_um.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libsrv_init.so:system/vendor/lib/libsrv_init.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpvr2d.so:system/vendor/lib/libpvr2d.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libpvrANDROID_WSEGL.so:system/vendor/lib/libpvrANDROID_WSEGL.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libPVRScopeServices.so:system/vendor/lib/libPVRScopeServices.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libglslcompiler.so:system/vendor/lib/libglslcompiler.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/pvrsrvinit:system/bin/pvrsrvinit
 
 # Sensors
