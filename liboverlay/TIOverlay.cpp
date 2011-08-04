@@ -19,7 +19,7 @@
  */
 
 #define LOG_TAG "TIOverlay"
-#define LOG_NDEBUG 0
+//#define LOG_NDEBUG 0
 
 #include <hardware/hardware.h>
 #include <hardware/overlay.h>
@@ -1231,6 +1231,15 @@ int overlay_control_context_t::overlay_setPosition(struct overlay_control_device
     // in which case we will do our best to adjust the rectangle to be within
     // the display.
 
+    /* Do pre-check rotation */
+    if (stage->rotation == 90 || stage->rotation == 270) {
+        uint32_t temp = w;
+        w = h;
+        h = temp;
+        temp = y;
+        y = x;
+        x = temp;
+    }
     // Require a minimum size
     if (w < 16 || h < 16) {
         // Return an error
@@ -1250,12 +1259,20 @@ int overlay_control_context_t::overlay_setPosition(struct overlay_control_device
         goto END;
     }
 
-    if (data->posX == (unsigned int)x &&
+    /* Rotation may have changed */
+    /*if (data->posX == (unsigned int)x &&
         data->posY == (unsigned int)y &&
         data->posW == w &&
         data->posH == h) {
         LOGV("Nothing to set position!\n");
         goto END;
+    }*/
+    /* Undo post-check rotation */
+    if ((stage->rotation == 90 || stage->rotation == 270) 
+                && !overlayobj->mData.s3d_active) {
+        uint32_t temp = w;
+        w = h;
+        h = temp;
     }
 
     stage->posX = x;

@@ -18,8 +18,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#define OVERLAY_DEBUG 1
-#define LOG_NDEBUG 0
+//#define OVERLAY_DEBUG 1
+//#define LOG_NDEBUG 0
 #define LOG_TAG "Overlay-V4L2"
 
 #include <fcntl.h>
