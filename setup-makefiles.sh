@@ -96,9 +96,7 @@ PRODUCT_COPY_FILES += \\
 # Wifi
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/firmware.bin:system/etc/wifi/firmware.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/tiwlan.ini:system/etc/wifi/tiwlan.ini \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/softap/firmware_ap.bin:system/etc/wifi/softap/firmware_ap.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/softap/tiwlan_ap.ini:system/etc/wifi/softap/tiwlan_ap.ini
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/softap/firmware_ap.bin:system/etc/wifi/softap/firmware_ap.bin
 
 # RIL
 PRODUCT_COPY_FILES += \\

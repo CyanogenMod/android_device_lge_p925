@@ -50,10 +50,7 @@ adb pull /system/bin/mpld ../../../vendor/$VENDOR/$DEVICE/proprietary/bin/
 
 # Wifi
 adb pull /system/etc/wifi/firmware.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
-adb pull /system/etc/wifi/tiwlan.ini ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
 adb pull /system/etc/wifi/softap/firmware_ap.bin ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
-adb pull /system/etc/wifi/softap/hostap.conf ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
-adb pull /system/etc/wifi/softap/tiwlan_ap.ini ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
 
 # Radio
 

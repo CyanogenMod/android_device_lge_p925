@@ -31,13 +31,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.dummy.rc:root/init.p920.rc \
     $(LOCAL_PATH)/ueventd.omap4430.rc:root/ueventd.omap4430.rc \
     $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
-    $(LOCAL_PATH)/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/hostapd.conf:system/etc/wifi/softap/hostapd.conf
+    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/configs/hostapd.conf:system/etc/wifi/softap/hostapd.conf \
+    $(LOCAL_PATH)/configs/tiwlan_ap.ini:system/etc/wifi/softap/tiwlan_ap.ini \
+    $(LOCAL_PATH)/configs/tiwlan.ini:system/etc/wifi/softap/tiwlan.ini \
+    $(LOCAL_PATH)/configs/tiwlan_ota.ini:system/etc/wifi/softap/tiwlan_ota.ini
 
 # RIL stuffs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/rild:system/bin/rild \
-    $(LOCAL_PATH)/ipc_channels.config:system/etc/ipc_channels.config \
+    $(LOCAL_PATH)/configs/ipc_channels.config:system/etc/ipc_channels.config \
     $(LOCAL_PATH)/init.vsnet:system/bin/init.vsnet
 
 # Permission files
@@ -58,10 +61,10 @@ PRODUCT_COPY_FILES += \
 
 ## Alsa configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/alsa/asound.conf:system/etc/asound.conf
+    $(LOCAL_PATH)/configs/asound.conf:system/etc/asound.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps_brcm_conf.xml:/system/etc/gps_brcm_conf.xml
+    $(LOCAL_PATH)/configs/gps_brcm_conf.xml:/system/etc/gps_brcm_conf.xml
 
 $(call inherit-product, build/target/product/full.mk)
 
@@ -107,6 +110,7 @@ PRODUCT_PACKAGES += \
 # Tiler and Syslink
 PRODUCT_PACKAGES += \
     overlay.p920 \
+    alsa.omap4 \
     libipcutils \
     libipc \
     libnotify \
