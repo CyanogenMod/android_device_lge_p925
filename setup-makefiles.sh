@@ -106,14 +106,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libril.so:system/lib/libril.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libini.so:system/lib/libini.so
 
-# Audio
-PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudio.so:system/lib/libaudio.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmmclient.so:system/lib/libmmclient.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudiomodemgeneric.so:system/lib/libaudiomodemgeneric.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libacousticengine.so:system/lib/libacousticengine.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/alsa.omap4.so:system/lib/hw/alsa.omap4.so
-
 ## IVA Firmware
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/base_image_sys_m3.xem3:system/base_image_sys_m3.xem3 \\
