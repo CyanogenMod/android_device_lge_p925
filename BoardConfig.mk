@@ -1,4 +1,5 @@
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
+BOARD_USES_TI_CAMERA_HAL := true
 
 # inherit from the proprietary version
 -include vendor/lge/p920/BoardConfigVendor.mk

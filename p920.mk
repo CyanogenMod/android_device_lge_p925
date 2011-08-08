@@ -63,8 +63,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/asound.conf:system/etc/asound.conf
 
+## GPS
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps_brcm_conf.xml:/system/etc/gps_brcm_conf.xml
+    $(LOCAL_PATH)/configs/gps_brcm_conf.xml:system/etc/gps_brcm_conf.xml
+
+## Camera
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/TICameraCameraProperties.xml:system/etc/TICameraCameraProperties.xml
 
 $(call inherit-product, build/target/product/full.mk)
 
@@ -111,6 +116,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     overlay.p920 \
     alsa.omap4 \
+    libomxcameraadapter \
     libipcutils \
     libipc \
     libnotify \
