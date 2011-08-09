@@ -80,7 +80,6 @@ PRODUCT_PACKAGES += \
     wlan_cu \
     tiap_loader \
     tiap_cu \
-    alsa.default \
     gps.p920 \
     acoustics.default
 
@@ -116,6 +115,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     overlay.p920 \
     alsa.omap4 \
+    libcamera \
     libomxcameraadapter \
     libipcutils \
     libipc \

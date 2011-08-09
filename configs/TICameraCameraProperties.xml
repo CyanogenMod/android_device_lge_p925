@@ -162,7 +162,7 @@
 <prop-revision>0</prop-revision>
 <prop-required-preview-bufs>6</prop-required-preview-bufs>
 <prop-required-image-bufs>1</prop-required-image-bufs>
-<prop-orientation>0</prop-orientation>
+<prop-orientation>90</prop-orientation>
 <prop-facing>back</prop-facing>
 <prop-s3d-supported>true</prop-s3d-supported>
 <prop-s3d-frame-layout>s3d-frame-layout</prop-s3d-frame-layout>
@@ -200,7 +200,7 @@
 <prop-auto-convergence>auto-convergence</prop-auto-convergence>
 <prop-manual-convergence-values>-100,-50,-30,-25,0,25,50,100</prop-manual-convergence-values>
 <prop-vstab-values>0,1</prop-vstab-values>
-<prop-sensor-orientation>0</prop-sensor-orientation>
+<prop-sensor-orientation>270</prop-sensor-orientation>
 <prop-sensor-orientation-values>0,90,180,270</prop-sensor-orientation-values>
 <prop-preview-size-default>640x480</prop-preview-size-default>
 <prop-preview-format-default>yuv420sp</prop-preview-format-default>
