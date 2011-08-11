@@ -115,6 +115,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     overlay.p920 \
     alsa.omap4 \
+    libaudiomodemgeneric \
     libcamera \
     libomxcameraadapter \
     libipcutils \
