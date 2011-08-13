@@ -117,6 +117,7 @@ PRODUCT_PACKAGES += \
     alsa.omap4 \
     libaudiomodemgeneric \
     libcamera \
+    libtiutils \
     libomxcameraadapter \
     libipcutils \
     libipc \
