@@ -83,7 +83,7 @@
       <Video codec="h264"
              bitRate="12000000"
              width="1920"
-             height="1088"
+             height="1080"
              frameRate="30" />
 
       <Audio codec="aac"
@@ -165,6 +165,56 @@
     <Camera previewFrameRate="30" />
 
   </CamcorderProfiles>
+  <CamcorderProfiles cameraId="2">
+
+    <EncoderProfile quality="hd" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="12000000"
+             width="1920"
+             height="1080"
+             frameRate="30" />
+
+      <Audio codec="aac"
+             bitRate="128000"
+             sampleRate="44100"
+             channels="1" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="high" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="6000000"
+             width="1280"
+             height="720"
+             frameRate="30" />
+
+      <Audio codec="aac"
+             bitRate="128000"
+             sampleRate="44100"
+             channels="1" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="low" fileFormat="3gp" duration="30">
+      <Video codec="h264"
+             bitRate="128000"
+             width="176"
+             height="144"
+             frameRate="15" />
+
+      <Audio codec="amrnb"
+             bitRate="12200"
+             sampleRate="8000"
+             channels="1" />
+
+    </EncoderProfile>
+
+    <ImageEncoding quality="100" />
+    <ImageEncoding quality="90" />
+    <ImageEncoding quality="80" />
+    <ImageDecoding memCap="20000000" />
+
+    <Camera previewFrameRate="30" />
+
+  </CamcorderProfiles>
 
   <EncoderOutputFileFormat name="3gp" />
 
@@ -176,7 +226,7 @@
   <VideoEncoderCap name="h264" enabled="true"
       minBitRate="64000" maxBitRate="20000000"
       minFrameWidth="176" maxFrameWidth="1920"
-      minFrameHeight="144" maxFrameHeight="1088"
+      minFrameHeight="144" maxFrameHeight="1080"
       minFrameRate="1" maxFrameRate="30" />
 
   <VideoEncoderCap name="h263" enabled="true"
