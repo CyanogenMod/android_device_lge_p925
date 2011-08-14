@@ -31,7 +31,9 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 #BOARD_HAS_LARGE_FILESYSTEM := true
 
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
+## Cosmo uses 22 as the RIL ldisc
+BOARD_TI_LDISC_WL := 23
+
 BOARD_HAS_NO_MISC_PARTITION := true
 
 TARGET_RECOVERY_PRE_COMMAND := "/system/bin/setup-recovery"

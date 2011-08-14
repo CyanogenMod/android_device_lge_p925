@@ -109,6 +109,10 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/base_image_sys_m3.xem3:system/base_image_sys_m3.xem3 \\
     vendor/__VENDOR__/__DEVICE__/proprietary/base_image_app_m3.xem3:system/base_image_app_m3.xem3
 
+## Bluetooth firmware
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/TIInit_7.2.31.bts:system/etc/firmware/TIInit_7.2.31.bts
+
 ## GPS
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/cert/lge.cer:system/etc/cert/lge.cer \\

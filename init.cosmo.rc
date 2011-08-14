@@ -292,6 +292,7 @@ loglevel 3
     chown system system /sys/devices/platform/i2c_omap.2/i2c-2/2-0053/enable
 
 ### END OF LGE STUFFS
+
 on fs
     mount ext3 /dev/block/mmcblk0p7 /system ro noatime data=ordered wait
     mount ext3 /dev/block/mmcblk0p8 /data nosuid nodev noatime data=ordered wait
@@ -561,6 +562,8 @@ on property:ro.secure=0
 # Lazy way go get things done when /system(/build.prop) is up
 on property:ro.product.device=p920
     start enable-tiwlink
+    wait /sys/class/rfkill/rfkill0/type
+    start uim
 
 # adbd is controlled by the persist.service.adb.enable system property
 service adbd /sbin/adbd
@@ -739,12 +742,20 @@ service baseimage /system/bin/syslink_daemon.out /system/base_image_sys_m3.xem3 
      group media
      oneshot
 
+service uim /system/bin/uim-sysfs
+    user root
+    group media bluetooth
+    disabled
+    oneshot
+
+service hciattach /system/bin/hciattach -l
+    user root
+    group bluetooth net_bt_admin misc
+    disabled
+    oneshot
+
 ## GPS
 service glgps /system/bin/glgps -c /system/etc/gps_brcm_conf.xml
     user system
     group net_raw sdcard_rw system net_admin inet
 
-## Camera firmware
-#service camera_dcc /system/bin/sh /system/omapcam/dcc_binaries/copy.sh
-#    user system
-#    oneshot

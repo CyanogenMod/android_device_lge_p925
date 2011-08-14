@@ -19,6 +19,7 @@ DEVICE=p920
 
 rm -rf ../../../vendor/$VENDOR/$DEVICE
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/bin
+mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/flex
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/wifi/softap
@@ -62,6 +63,9 @@ adb pull /system/lib/libini.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib
 # IVA firmware images
 adb pull /system/base_image_sys_m3.xem3 ../../../vendor/$VENDOR/$DEVICE/proprietary/
 adb pull /system/base_image_app_m3.xem3 ../../../vendor/$VENDOR/$DEVICE/proprietary/
+
+# Bluetooth firmware
+adb pull /system/etc/firmware/TIInit_7.2.31.bts ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/firmware/
 
 # GPS
 adb pull /system/etc/cert/lge.cer ../../../vendor/$VENDOR/$DEVICE/proprietary/etc/cert
