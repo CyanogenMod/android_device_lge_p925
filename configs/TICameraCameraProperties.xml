@@ -75,8 +75,8 @@
 <prop-video-min-framerate-values>10,15,20,24,25,30,33</prop-video-min-framerate-values>
 <prop-flash-mode-default>off</prop-flash-mode-default>
 <prop-s3d2d-preview>off</prop-s3d2d-preview>
-<prop-exif-make>default_make</prop-exif-make>
-<prop-exif-model>default_model</prop-exif-model>
+<prop-exif-make>CyanogenMod</prop-exif-make>
+<prop-exif-model>LGE P920</prop-exif-model>
 </CameraInstance>
 <CameraInstance>
 <prop-camera-name>SecondaryCamera</prop-camera-name>
@@ -152,8 +152,8 @@
 <prop-framerate-range-values>(10000,30000)</prop-framerate-range-values>
 <prop-video-min-framerate>30</prop-video-min-framerate>
 <prop-video-min-framerate-values>10,15,20,24,25,30,33</prop-video-min-framerate-values>
-<prop-exif-make>default_make</prop-exif-make>
-<prop-exif-model>default_model</prop-exif-model>
+<prop-exif-make>CyanogenMod</prop-exif-make>
+<prop-exif-model>LGE P920</prop-exif-model>
 </CameraInstance>
 <CameraInstance>
 <prop-camera-name>DualCamera</prop-camera-name>
@@ -165,7 +165,7 @@
 <prop-orientation>90</prop-orientation>
 <prop-facing>back</prop-facing>
 <prop-s3d-supported>true</prop-s3d-supported>
-<prop-s3d-frame-layout>s3d-frame-layout</prop-s3d-frame-layout>
+<prop-s3d-frame-layout>ss_full</prop-s3d-frame-layout>
 <prop-s3d-frame-layout-values>tb_full,ss_full,tb_subsampled,ss_subsampled</prop-s3d-frame-layout-values>
 <prop-focal-length>4.76</prop-focal-length>
 <prop-horizontal-angle>60.4</prop-horizontal-angle>
@@ -230,7 +230,7 @@
 <prop-framerate-range-values>(10000,30000)</prop-framerate-range-values>
 <prop-video-min-framerate>30</prop-video-min-framerate>
 <prop-video-min-framerate-values>10,15,20,24,25,30,33</prop-video-min-framerate-values>
-<prop-exif-make>default_make</prop-exif-make>
-<prop-exif-model>default_model</prop-exif-model>
+<prop-exif-make>CyanogenMod</prop-exif-make>
+<prop-exif-model>LGE P920</prop-exif-model>
 </CameraInstance>
 </CameraRoot>
