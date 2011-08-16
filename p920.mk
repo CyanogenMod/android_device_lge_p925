@@ -30,7 +30,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.cosmo.rc:root/init.rc \
     $(LOCAL_PATH)/init.dummy.rc:root/init.p920.rc \
     $(LOCAL_PATH)/ueventd.omap4430.rc:root/ueventd.omap4430.rc \
-    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab
+
+## Wifi
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifimac/wlan-precheck:system/bin/wlan-precheck \
     $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/hostapd.conf:system/etc/wifi/softap/hostapd.conf \
     $(LOCAL_PATH)/configs/tiwlan_ap.ini:system/etc/wifi/softap/tiwlan_ap.ini \
@@ -153,6 +157,10 @@ FRAMEWORKS_BASE_SUBDIRS += \
 PRODUCT_PACKAGES += \
     libskiahwdec \
     libskiahwenc
+
+## To set the Wifi MAC address from NV
+PRODUCT_PACKAGES += \
+    wifimac
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := p920

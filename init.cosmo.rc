@@ -564,6 +564,8 @@ on property:ro.product.device=p920
     start enable-tiwlink
     wait /sys/class/rfkill/rfkill0/type
     start uim
+    wait /data/misc/wifi
+    start wlan_precheck
 
 # adbd is controlled by the persist.service.adb.enable system property
 service adbd /sbin/adbd
@@ -718,6 +720,10 @@ service iprenew_tiwlan0 /system/bin/dhcpcd -n tiwlan0
     oneshot
 
 service hostapd /system/bin/hostap -dd /data/misc/wifi/hostapd.conf
+    disabled
+    oneshot
+
+service wlan_precheck /system/bin/wlan-precheck
     disabled
     oneshot
 
