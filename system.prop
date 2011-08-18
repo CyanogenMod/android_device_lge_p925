@@ -37,3 +37,6 @@ ro.com.google.clientidbase.am=android-lge
 omap.audio.mic.main=AMic0
 omap.audio.mic.sub=AMic1
 omap.audio.power=PingPong
+
+## Add additional storage expansion
+ro.additionalmounts=/mnt/emmc
