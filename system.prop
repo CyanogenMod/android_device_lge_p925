@@ -40,3 +40,4 @@ omap.audio.power=PingPong
 
 ## Add additional storage expansion
 ro.additionalmounts=/mnt/emmc
+ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
