@@ -21,6 +21,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     $(LOCAL_PATH)/prebuilt/fm_drv.ko:system/lib/modules/fm_drv.ko \
+    $(LOCAL_PATH)/prebuilt/fm_v4l2_drv.ko:system/lib/modules/fm_v4l2_drv.ko \
     $(LOCAL_PATH)/prebuilt/btwilink.ko:system/lib/modules/btwilink.ko
 
 ## Scripts and confs
