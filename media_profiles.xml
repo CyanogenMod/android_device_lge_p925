@@ -167,7 +167,7 @@
   </CamcorderProfiles>
   <CamcorderProfiles cameraId="2">
 
-    <EncoderProfile quality="hd" fileFormat="mp4" duration="30">
+    <!--EncoderProfile quality="hd" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="12000000"
              width="1920"
@@ -178,9 +178,9 @@
              bitRate="128000"
              sampleRate="44100"
              channels="1" />
-    </EncoderProfile>
+    </EncoderProfile-->
 
-    <EncoderProfile quality="high" fileFormat="mp4" duration="30">
+    <EncoderProfile quality="high" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="6000000"
              width="1280"
@@ -196,8 +196,8 @@
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="128000"
-             width="176"
-             height="144"
+             width="640"
+             height="480"
              frameRate="15" />
 
       <Audio codec="amrnb"
