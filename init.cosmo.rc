@@ -293,6 +293,11 @@ loglevel 3
     chown system system /sys/devices/platform/i2c_omap.2/i2c-2/2-0053/torch
     chown system system /sys/devices/platform/i2c_omap.2/i2c-2/2-0053/enable
 
+#LGE_KERNEL_MUX START  jongho3.lee@lge.com
+    chown root  radio /sys/class/power_supply/battery/gauge_control
+    chown root  radio /sys/class/power_supply/battery/voltage_now
+
+
 ### END OF LGE STUFFS
 
 on fs
@@ -376,7 +381,7 @@ on post-fs
 # LGE_CHANGE_S Wi-Fi jiwoong.eom@lge.com 20101124 for SoftAP
     mkdir /data/misc/wifi/softap 0771 wifi wifi
 # LGE_CHANGE_E Wi-Fi jiwoong.eom@lge.com 20101124 for SoftAP
-# Copying hostapd.conf (WLAN soft AP)
+    # Copying hostapd.conf (WLAN soft AP)
     copy /system/etc/wifi/softap/hostapd.conf /data/misc/wifi/hostapd.conf
     chown wifi radio /data/misc/wifi
     mkdir /data/misc/dhcp 0777 dhcp dhcp
@@ -766,4 +771,3 @@ service hciattach /system/bin/hciattach -l
 service glgps /system/bin/glgps -c /system/etc/gps_brcm_conf.xml
     user system
     group net_raw sdcard_rw system net_admin inet
-
