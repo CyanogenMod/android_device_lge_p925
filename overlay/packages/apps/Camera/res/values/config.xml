@@ -19,4 +19,6 @@
 
 <resources>
 	<bool name="isOMAP4Camera">true</bool>
+	<bool name="ffc_canFocus">false</bool>
+	<bool name="ffc_canZoom">false</bool>
 </resources>

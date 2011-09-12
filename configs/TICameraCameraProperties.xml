@@ -88,7 +88,7 @@
 <prop-focal-length>4.76</prop-focal-length>
 <prop-horizontal-angle>60.4</prop-horizontal-angle>
 <prop-vertical-angle>48.2</prop-vertical-angle>
-<prop-orientation>270</prop-orientation>
+<prop-orientation>180</prop-orientation>
 <prop-facing>front</prop-facing>
 <prop-s3d-supported>false</prop-s3d-supported>
 <prop-s3d-frame-layout>0</prop-s3d-frame-layout>
@@ -123,7 +123,7 @@
 <prop-auto-convergence>0</prop-auto-convergence>
 <prop-manual-convergence-values>0</prop-manual-convergence-values>
 <prop-vstab-values>0,1</prop-vstab-values>
-<prop-sensor-orientation>270</prop-sensor-orientation>
+<prop-sensor-orientation>180</prop-sensor-orientation>
 <prop-sensor-orientation-values>0,90,180,270</prop-sensor-orientation-values>
 <prop-preview-size-default>360x480</prop-preview-size-default>
 <prop-zoom-default>0</prop-zoom-default>
@@ -197,7 +197,7 @@
 <prop-s3d-image-format>ss_full</prop-s3d-image-format>
 <prop-s3d-image-format-values>tb_full,ss_full,tb_subsampled,ss_subsampled</prop-s3d-image-format-values>
 <prop-auto-convergence-mode>mode-disable,mode-frame,mode-center,mode-fft,mode-manual</prop-auto-convergence-mode>
-<prop-auto-convergence>mode-frame</prop-auto-convergence>
+<prop-auto-convergence>auto-convergence</prop-auto-convergence>
 <prop-manual-convergence-values>-100,-50,-30,-25,0,25,50,100</prop-manual-convergence-values>
 <prop-vstab-values>0,1</prop-vstab-values>
 <prop-sensor-orientation>270</prop-sensor-orientation>
@@ -206,7 +206,7 @@
 <prop-preview-format-default>yuv420sp</prop-preview-format-default>
 <prop-preview-frame-rate-default>30</prop-preview-frame-rate-default>
 <prop-zoom-default>0</prop-zoom-default>
-<prop-picture-size-default>640x480</prop-picture-size-default>
+<prop-picture-size-default>2048x1536</prop-picture-size-default>
 <prop-picture-format-default>jpeg</prop-picture-format-default>
 <prop-jpeg-thumbnail-size-default>160x120</prop-jpeg-thumbnail-size-default>
 <prop-jpeg-thumbnail-quality-default>60</prop-jpeg-thumbnail-quality-default>
@@ -214,7 +214,7 @@
 <prop-effect-default>none</prop-effect-default>
 <prop-antibanding-default>50hz</prop-antibanding-default>
 <prop-exposure-mode-default>auto</prop-exposure-mode-default>
-<prop-ipp-default>off<prop-ipp-default>
+<prop-ipp-default>off</prop-ipp-default>
 <prop-ev-compensation-default>0</prop-ev-compensation-default>
 <prop-iso-mode-default>auto</prop-iso-mode-default>
 <prop-focus-mode-default>auto</prop-focus-mode-default>
