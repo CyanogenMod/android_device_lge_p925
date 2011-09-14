@@ -11,7 +11,6 @@
     <!-- Component name of the service providing geocoder API support. -->
     <string name="config_geocodeProvider">com.google.android.location.GeocodeProvider</string>
 
-    <!-- No tethering yet
     <string-array translatable="false" name="config_tether_usb_regexs">
     <item>"usb0"</item>
     </string-array>
@@ -22,9 +21,8 @@
     </string-array>
 
     <string-array translatable="false" name="config_tether_wifi_regexs">
-        <item>"tiap0"</item>
+        <item>"tiap\\d"</item>
     </string-array>
-    -->
 
     <bool name="config_automatic_brightness_available">true</bool>
 

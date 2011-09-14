@@ -16,7 +16,7 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
     $(LOCAL_PATH)/prebuilt/tiwlan_drv.ko:system/etc/wifi/tiwlan_drv.ko \
-    $(LOCAL_PATH)/prebuilt/tiap_drv.ko:system/etc/wifi/softap/tiap_drv.ko
+    $(LOCAL_PATH)/prebuilt/tiap_drv.ko:system/lib/modules/tiap_drv.ko
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
@@ -38,7 +38,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifimac/wlan-precheck:system/bin/wlan-precheck \
     $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/hostapd.conf:system/etc/wifi/softap/hostapd.conf \
-    $(LOCAL_PATH)/configs/tiwlan_ap.ini:system/etc/wifi/softap/tiwlan_ap.ini \
+    $(LOCAL_PATH)/configs/tiwlan_ap.ini:system/etc/wifi/tiwlan_ap.ini \
     $(LOCAL_PATH)/configs/tiwlan.ini:system/etc/wifi/softap/tiwlan.ini \
     $(LOCAL_PATH)/configs/tiwlan_ota.ini:system/etc/wifi/softap/tiwlan_ota.ini
 
@@ -155,12 +155,17 @@ PRODUCT_PACKAGES += \
 FRAMEWORKS_BASE_SUBDIRS += \
 	$(addsuffix /java, omapmmlib )
 
+#FRAMEWORKS_BASE_SUBDIRS += \
+#	../../$(LOCAL_PATH)/framework-addons/
+
 PRODUCT_PACKAGES += \
     libskiahwdec \
     libskiahwenc
 
-## To set the Wifi MAC address from NV
+## To set the Wifi MAC address from NV, and the softap stuff
 PRODUCT_PACKAGES += \
+    hostap \
+    libhostapdcli \
     wifimac
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
