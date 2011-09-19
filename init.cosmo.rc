@@ -208,8 +208,10 @@ loglevel 3
     chown system system /sys/devices/platform/omapdss/display3/timings
 
     chown system system /sys/devices/platform/omapfb/graphics/fb0/overlays
+    chown system system /sys/devices/platform/omapfb/graphics/fb0/fit_to_screen
     chown system system /sys/devices/platform/omapfb/graphics/fb0/overlays_rotate
     chown system system /sys/devices/platform/omapfb/graphics/fb1/overlays
+    chown system system /sys/devices/platform/omapfb/graphics/fb1/fit_to_screen
     chown system system /sys/devices/platform/omapfb/graphics/fb1/overlays_rotate
 
     chown system system /sys/devices/platform/omapdss/display1/hdmi_out
@@ -304,6 +306,12 @@ on early-init
     start hwprops
 
 on fs
+
+# Boost the CPU for 60 sec for boot optimization
+    write /sys/devices/system/cpu/cpufreq/hotplug/boost_timeout 60000000
+    write /sys/devices/system/cpu/cpu0/cpufreq/boost_cpufreq 1
+    write /sys/devices/system/cpu/cpufreq/hotplug/boost_timeout 3000000
+
     mount ext3 /dev/block/mmcblk0p7 /system ro noatime data=ordered wait
     mount ext3 /dev/block/mmcblk0p8 /data nosuid nodev noatime data=ordered wait
     chown system system /data
@@ -603,6 +611,7 @@ service vold /system/bin/vold
 
 service netd /system/bin/netd
     socket netd stream 0660 root system
+    socket dnsproxyd stream 0660 root inet
 
 service debuggerd /system/bin/debuggerd
 
