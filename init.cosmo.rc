@@ -302,6 +302,10 @@ loglevel 3
 
 ### END OF LGE STUFFS
 
+    # flashlight
+    chown system camera /sys/devices/platform/i2c_omap.2/i2c-2/2-0053/torch
+    chmod 0660          /sys/devices/platform/i2c_omap.2/i2c-2/2-0053/torch
+
 on early-init
     start hwprops
 
