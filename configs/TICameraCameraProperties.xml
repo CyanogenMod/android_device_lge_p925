@@ -177,7 +177,7 @@
 <prop-zoom-stages>60</prop-zoom-stages>
 <prop-zoom-supported>true</prop-zoom-supported>
 <prop-smooth-zoom-supported>true</prop-smooth-zoom-supported>
-<prop-picture-size-values>4096x1536,2048x1536,3200x1200,1600x1200,2560x960,1280x960,2560x720,1280x720,1600x480,800x480,1280x480,640x480,640x240,320x240</prop-picture-size-values>
+<prop-picture-size-values>4096x1536,3200x1200,2560x960,2560x720,1600x480,1280x480,640x240</prop-picture-size-values>
 <prop-picture-format-values>jpeg,jps,mpo,raw+jpeg,raw+mpo,yuv422i-yuyv,yuv420sp,rgb565,raw</prop-picture-format-values>
 <prop-jpeg-thumbnail-size-values>160x120,200x120,320x240,512x384,352x144,176x144,96x96,0x0</prop-jpeg-thumbnail-size-values>
 <prop-whitebalance-values>auto,daylight,cloudy-daylight,shade,tungsten,fluorescent,incandescent,horizon,face-priority,sunset,twilight,warm-fluorescent</prop-whitebalance-values>
@@ -206,7 +206,7 @@
 <prop-preview-format-default>yuv420sp</prop-preview-format-default>
 <prop-preview-frame-rate-default>30</prop-preview-frame-rate-default>
 <prop-zoom-default>0</prop-zoom-default>
-<prop-picture-size-default>2048x1536</prop-picture-size-default>
+<prop-picture-size-default>4096x1536</prop-picture-size-default>
 <prop-picture-format-default>jpeg</prop-picture-format-default>
 <prop-jpeg-thumbnail-size-default>160x120</prop-jpeg-thumbnail-size-default>
 <prop-jpeg-thumbnail-quality-default>60</prop-jpeg-thumbnail-quality-default>
