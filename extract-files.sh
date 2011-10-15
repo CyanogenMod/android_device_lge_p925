@@ -32,6 +32,7 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/gralloc.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/lights.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/sensors.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
+adb pull /system/lib/hw/overlay.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
 ## PVRSGX
 adb pull /system/vendor/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
@@ -121,7 +122,9 @@ adb pull /system/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/c
 adb pull /system/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/cid1040_imx072_ldc_cfg_dcc.bin  ../../../vendor/$VENDOR/$DEVICE/proprietary/system/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/
 adb pull /system/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/cid1040_imx072_vnf_cfg_dcc.bin  ../../../vendor/$VENDOR/$DEVICE/proprietary/system/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/
 adb pull /system/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/cid1040_imx072_vss_sac_smac_cfg_dcc.bin  ../../../vendor/$VENDOR/$DEVICE/proprietary/system/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/
-exit
 
+## Camera
+adb pull /system/lib/libcamera.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
+adb pull /system/lib/libomxcameraadapter.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/
 
 echo "NOTE: Unless all transfers failed, errors above should be safe to ignore. Proceed with your build"

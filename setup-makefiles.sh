@@ -72,7 +72,8 @@ EOF
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.omap4.so:system/lib/hw/gralloc.omap4.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.omap4.so:system/lib/hw/lights.omap4.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.omap4.so:system/lib/hw/sensors.omap4.so
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.omap4.so:system/lib/hw/sensors.omap4.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/overlay.omap4.so:system/lib/hw/overlay.omap4.so
 
 # PVRSGX
 PRODUCT_COPY_FILES += \\
@@ -170,6 +171,11 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/cid1040_imx072_vnf_cfg_dcc.bin:system/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/cid1040_imx072_vnf_cfg_dcc.bin \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/cid1040_imx072_vss_sac_smac_cfg_dcc.bin:system/etc/omapcam/R05_MVEN001_LD2_ND0_IR0_SH0_FL0_SVEN001_DCCID1040/cid1040_imx072_vss_sac_smac_cfg_dcc.bin
 
+# Camera (hopefully temporary)
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcamera.so:system/lib/libcamera.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcamera.so:obj/lib/libcamera.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomxcameraadapter.so:system/lib/libomxcameraadapter.so
 
 EOF
 
