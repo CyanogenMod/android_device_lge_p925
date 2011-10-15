@@ -62,6 +62,8 @@ WIFI_DRIVER_MODULE_PATH     := "/system/etc/wifi/tiwlan_drv.ko"
 WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
 WIFI_FIRMWARE_LOADER        := "wlan_loader"
 
+BOARD_MOBILEDATA_INTERFACE_NAME := "vsnet0"
+
 OMAP_ENHANCEMENT := true
 
 ifdef OMAP_ENHANCEMENT
