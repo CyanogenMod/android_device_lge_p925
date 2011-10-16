@@ -21,4 +21,6 @@
 	<bool name="isOMAP4Camera">true</bool>
 	<bool name="ffc_canFocus">false</bool>
 	<bool name="ffc_canZoom">false</bool>
+	<string name="touchFocusParameter">touch-position</string>
+	<bool name="touchFocusNeedsRect">false</bool>
 </resources>
