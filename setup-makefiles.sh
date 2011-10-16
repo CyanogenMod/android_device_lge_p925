@@ -174,7 +174,6 @@ PRODUCT_COPY_FILES += \\
 # Camera (hopefully temporary)
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcamera.so:system/lib/libcamera.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcamera.so:obj/lib/libcamera.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libomxcameraadapter.so:system/lib/libomxcameraadapter.so
 
 EOF
