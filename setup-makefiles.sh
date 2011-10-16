@@ -72,8 +72,7 @@ EOF
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.omap4.so:system/lib/hw/gralloc.omap4.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.omap4.so:system/lib/hw/lights.omap4.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.omap4.so:system/lib/hw/sensors.omap4.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/overlay.omap4.so:system/lib/hw/overlay.omap4.so
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.omap4.so:system/lib/hw/sensors.omap4.so
 
 # PVRSGX
 PRODUCT_COPY_FILES += \\

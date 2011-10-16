@@ -32,7 +32,6 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/gralloc.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/lights.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 adb pull /system/lib/hw/sensors.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
-adb pull /system/lib/hw/overlay.omap4.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/hw
 
 ## PVRSGX
 adb pull /system/vendor/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so ../../../vendor/$VENDOR/$DEVICE/proprietary/lib/egl
