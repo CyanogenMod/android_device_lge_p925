@@ -91,7 +91,19 @@ PRODUCT_COPY_FILES += \\
 
 # Sensors
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bin/mpld:system/bin/mpld
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmpl.so:system/lib/libmpl.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmllite.so:system/lib/libmllite.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmlplatform.so:system/lib/libmlplatform.so
+
+# Audio
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/alsa.omap4.so:system/lib/hw/alsa.omap4.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libacousticengine.so:system/lib/libacousticengine.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmmclient.so:system/lib/libmmclient.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudiomodemgeneric.so:system/lib/libaudiomodemgeneric.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudiopolicy.so:system/lib/libaudiopolicy.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudio.so:obj/lib/libaudio.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudio.so:system/lib/libaudio.so
 
 # Wifi
 PRODUCT_COPY_FILES += \\
@@ -119,7 +131,7 @@ PRODUCT_COPY_FILES += \\
 ## GPS
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/cert/lge.cer:system/etc/cert/lge.cer \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gps.p920.so:system/lib/hw/gps.p920.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gps.omap4.so:system/lib/hw/gps.omap4.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/glgps:system/bin/glgps
 
 ## Camera firmware

@@ -178,10 +178,19 @@ loglevel 3
     chown system system /sys/devices/platform/omapdss/overlay1/output_size
     chown system system /sys/devices/platform/omapdss/overlay2/output_size
     chown system system /sys/devices/platform/omapdss/overlay3/output_size
+    chown system system /sys/devices/platform/omapdss/overlay0/portrait_position
+    chown system system /sys/devices/platform/omapdss/overlay1/portrait_position
+    chown system system /sys/devices/platform/omapdss/overlay2/portrait_position
+    chown system system /sys/devices/platform/omapdss/overlay3/portrait_position
+    chown system system /sys/devices/platform/omapdss/overlay0/portrait_output_size
+    chown system system /sys/devices/platform/omapdss/overlay1/portrait_output_size
+    chown system system /sys/devices/platform/omapdss/overlay2/portrait_output_size
+    chown system system /sys/devices/platform/omapdss/overlay3/portrait_output_size
     chown system system /sys/devices/platform/omapdss/overlay0/input_size
     chown system system /sys/devices/platform/omapdss/overlay1/input_size
     chown system system /sys/devices/platform/omapdss/overlay2/input_size
     chown system system /sys/devices/platform/omapdss/overlay3/input_size
+
     chown system system /sys/devices/platform/omapdss/manager0/name
     chown system system /sys/devices/platform/omapdss/manager0/display
     chown system system /sys/devices/platform/omapdss/manager0/trans_key_value
@@ -208,10 +217,8 @@ loglevel 3
     chown system system /sys/devices/platform/omapdss/display3/timings
 
     chown system system /sys/devices/platform/omapfb/graphics/fb0/overlays
-    chown system system /sys/devices/platform/omapfb/graphics/fb0/fit_to_screen
     chown system system /sys/devices/platform/omapfb/graphics/fb0/overlays_rotate
     chown system system /sys/devices/platform/omapfb/graphics/fb1/overlays
-    chown system system /sys/devices/platform/omapfb/graphics/fb1/fit_to_screen
     chown system system /sys/devices/platform/omapfb/graphics/fb1/overlays_rotate
 
     chown system system /sys/devices/platform/omapdss/display1/hdmi_out
@@ -249,6 +256,14 @@ loglevel 3
     chmod 0775 /sys/devices/platform/omapdss/overlay1/output_size
     chmod 0775 /sys/devices/platform/omapdss/overlay2/output_size
     chmod 0775 /sys/devices/platform/omapdss/overlay3/output_size
+    chmod 0775 /sys/devices/platform/omapdss/overlay0/portrait_position
+    chmod 0775 /sys/devices/platform/omapdss/overlay1/portrait_position
+    chmod 0775 /sys/devices/platform/omapdss/overlay2/portrait_position
+    chmod 0775 /sys/devices/platform/omapdss/overlay3/portrait_position
+    chmod 0775 /sys/devices/platform/omapdss/overlay0/portrait_output_size
+    chmod 0775 /sys/devices/platform/omapdss/overlay1/portrait_output_size
+    chmod 0775 /sys/devices/platform/omapdss/overlay2/portrait_output_size
+    chmod 0775 /sys/devices/platform/omapdss/overlay3/portrait_output_size
     chmod 0775 /sys/devices/platform/omapdss/overlay0/input_size
     chmod 0775 /sys/devices/platform/omapdss/overlay1/input_size
     chmod 0775 /sys/devices/platform/omapdss/overlay2/input_size
@@ -298,6 +313,106 @@ loglevel 3
 #LGE_KERNEL_MUX START  jongho3.lee@lge.com
     chown root  radio /sys/class/power_supply/battery/gauge_control
     chown root  radio /sys/class/power_supply/battery/voltage_now
+
+# Disable fb1 wonki.choi@lge.com
+    write /sys/devices/platform/omapfb/graphics/fb1/overlays ""
+    write /sys/devices/platform/omapdss/overlay1/enabled 0
+#    write /sys/devices/platform/omapdss/overlay1/manager "2lcd"
+# Seting for HDMI plug-in wonki.choi@lge.com
+    write /sys/devices/platform/omapdss/display1/enabled 0
+    write /sys/devices/platform/omapdss/display1/hpd_enabled 1
+# setting HDMI Routing in system
+    write /sys/devices/platform/omapdss/overlay3/manager "tv"
+    write /sys/devices/platform/omapdss/overlay3/zorder 2
+
+    chmod 0775 /sys/devices/platform/omapdss/display1/hdmi_out
+    chmod 0775 /sys/devices/platform/omapdss/display1/hdmi_source
+    chmod 0775 /sys/devices/platform/omapdss/display1/hdmi_key
+    chmod 0775 /sys/devices/platform/omapdss/display1/hdmi_rotation
+    chmod 0775 /sys/devices/platform/omapdss/overlay1/input_size
+    chmod 0775 /sys/devices/platform/omapdss/display1/hdmi_3d_enable
+    chmod 0775 /sys/devices/platform/omapdss/display1/hdmi_3d_type
+    chmod 0775 /sys/devices/platform/omapdss/display1/hdmi_drm_lock
+    chmod 0775 /sys/devices/platform/omapdss/display1/hdmi_drm_usr_sel
+    chmod 0775 /sys/devices/platform/omapdss/display1/custom_edid_timing
+    chmod 0775 /sys/devices/platform/omapdss/display1/hpd_enabled
+
+ #HDMI device
+
+ chown system system /sys/devices/platform/omapdss/overlay0/req_enabled
+ chown system system /sys/devices/platform/omapdss/overlay0/req_rotation
+ chown system system /sys/devices/platform/omapdss/overlay0/req_position
+ chown system system /sys/devices/platform/omapdss/overlay0/req_out_size
+ chown system system /sys/devices/platform/omapdss/overlay0/req_manager
+ chown system system /sys/devices/platform/omapdss/overlay0/req_request
+ chown system system /sys/devices/platform/omapdss/overlay0/req_global_alpha
+ chown system system /sys/devices/platform/omapdss/overlay0/req_zorder
+
+ chmod 0775 /sys/devices/platform/omapdss/overlay0/req_enabled
+ chmod 0775 /sys/devices/platform/omapdss/overlay0/req_rotation
+ chmod 0775 /sys/devices/platform/omapdss/overlay0/req_position
+ chmod 0775 /sys/devices/platform/omapdss/overlay0/req_out_size
+ chmod 0775 /sys/devices/platform/omapdss/overlay0/req_manager
+ chmod 0775 /sys/devices/platform/omapdss/overlay0/req_request
+ chmod 0775 /sys/devices/platform/omapdss/overlay0/req_global_alpha
+ chmod 0775 /sys/devices/platform/omapdss/overlay0/req_zorder
+
+ chown system system /sys/devices/platform/omapdss/overlay1/req_enabled
+ chown system system /sys/devices/platform/omapdss/overlay1/req_rotation
+ chown system system /sys/devices/platform/omapdss/overlay1/req_position
+ chown system system /sys/devices/platform/omapdss/overlay1/req_out_size
+ chown system system /sys/devices/platform/omapdss/overlay1/req_manager
+ chown system system /sys/devices/platform/omapdss/overlay1/req_request
+ chown system system /sys/devices/platform/omapdss/overlay1/req_global_alpha
+ chown system system /sys/devices/platform/omapdss/overlay1/req_zorder
+
+ chmod 0775 /sys/devices/platform/omapdss/overlay1/req_enabled
+ chmod 0775 /sys/devices/platform/omapdss/overlay1/req_rotation
+ chmod 0775 /sys/devices/platform/omapdss/overlay1/req_position
+ chmod 0775 /sys/devices/platform/omapdss/overlay1/req_out_size
+ chmod 0775 /sys/devices/platform/omapdss/overlay1/req_manager
+ chmod 0775 /sys/devices/platform/omapdss/overlay1/req_request
+ chmod 0775 /sys/devices/platform/omapdss/overlay1/req_global_alpha
+ chmod 0775 /sys/devices/platform/omapdss/overlay1/req_zorder
+
+ chown system system /sys/devices/platform/omapdss/overlay2/req_enabled
+ chown system system /sys/devices/platform/omapdss/overlay2/req_rotation
+ chown system system /sys/devices/platform/omapdss/overlay2/req_position
+ chown system system /sys/devices/platform/omapdss/overlay2/req_out_size
+ chown system system /sys/devices/platform/omapdss/overlay2/req_manager
+ chown system system /sys/devices/platform/omapdss/overlay2/req_request
+ chown system system /sys/devices/platform/omapdss/overlay2/req_global_alpha
+ chown system system /sys/devices/platform/omapdss/overlay2/req_zorder
+
+ chmod 0775 /sys/devices/platform/omapdss/overlay2/req_enabled
+ chmod 0775 /sys/devices/platform/omapdss/overlay2/req_rotation
+ chmod 0775 /sys/devices/platform/omapdss/overlay2/req_position
+ chmod 0775 /sys/devices/platform/omapdss/overlay2/req_out_size
+ chmod 0775 /sys/devices/platform/omapdss/overlay2/req_manager
+ chmod 0775 /sys/devices/platform/omapdss/overlay2/req_request
+ chmod 0775 /sys/devices/platform/omapdss/overlay2/req_global_alpha
+ chmod 0775 /sys/devices/platform/omapdss/overlay2/req_zorder
+
+ chown system system /sys/devices/platform/omapdss/overlay3/req_enabled
+ chown system system /sys/devices/platform/omapdss/overlay3/req_rotation
+ chown system system /sys/devices/platform/omapdss/overlay3/req_position
+ chown system system /sys/devices/platform/omapdss/overlay3/req_out_size
+ chown system system /sys/devices/platform/omapdss/overlay3/req_manager
+ chown system system /sys/devices/platform/omapdss/overlay3/req_request
+ chown system system /sys/devices/platform/omapdss/overlay3/req_global_alpha
+ chown system system /sys/devices/platform/omapdss/overlay3/req_zorder
+
+ chmod 0775 /sys/devices/platform/omapdss/overlay3/req_enabled
+ chmod 0775 /sys/devices/platform/omapdss/overlay3/req_rotation
+ chmod 0775 /sys/devices/platform/omapdss/overlay3/req_position
+ chmod 0775 /sys/devices/platform/omapdss/overlay3/req_out_size
+ chmod 0775 /sys/devices/platform/omapdss/overlay3/req_manager
+ chmod 0775 /sys/devices/platform/omapdss/overlay3/req_request
+ chmod 0775 /sys/devices/platform/omapdss/overlay3/req_global_alpha
+ chmod 0775 /sys/devices/platform/omapdss/overlay3/req_zorder
+
+# Enable hotplug detection for HDMI
+    write /sys/devices/platform/omapdss/display1/hpd_enabled 1
 
 
 ### END OF LGE STUFFS
@@ -710,10 +825,6 @@ service dumpstate /system/bin/dumpstate -s
 service enable-tiwlink /system/bin/enable-tiwlink
     disabled
     oneshot
-
-service mpld /system/bin/mpld
-    user system
-    group system
 
 service wlan_loader /system/bin/wlan_loader \
     -f /system/etc/wifi/firmware.bin -i /system/etc/wifi/tiwlan.ini -e /data/misc/wifi/nvs_map.bin

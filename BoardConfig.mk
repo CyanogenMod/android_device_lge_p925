@@ -4,6 +4,8 @@ BOARD_USES_TI_CAMERA_HAL := true
 # inherit from the proprietary version
 -include vendor/lge/p920/BoardConfigVendor.mk
 
+#TARGET_SPECIFIC_HEADER_PATH := device/lge/p920/include
+
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := omap4
 TARGET_CPU_ABI := armeabi-v7a
@@ -31,8 +33,6 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 #BOARD_HAS_LARGE_FILESYSTEM := true
 
 BOARD_HAVE_BLUETOOTH := true
-## Cosmo uses 22 as the RIL ldisc
-BOARD_TI_LDISC_WL := 23
 
 BOARD_HAS_NO_MISC_PARTITION := true
 
@@ -45,9 +45,6 @@ BOARD_USES_ALSA_UTILS := true
 BOARD_USES_TI_OMAP_MODEM_AUDIO := true
 
 BOARD_EGL_CFG := device/lge/p920/egl.cfg
-
-TARGET_USES_OLD_LIBSENSORS_HAL:=true
-TARGET_SENSORS_NO_OPEN_CHECK := true
 
 BOARD_VOLD_MAX_PARTITIONS := 15
 
@@ -82,6 +79,16 @@ BOARD_OPENCORE_LIBRARIES := libOMX_Core
 BOARD_OPENCORE_FLAGS := -DHARDWARE_OMX=1
 endif
 
-BUILD_FM_RADIO := true
-FM_CHR_DEV_ST := true
-BUILD_TI_FM_APPS := true
+#BOARD_NEEDS_CUTILS_LOG := true
+
+#BUILD_FM_RADIO := true
+#FM_CHR_DEV_ST := true
+#BUILD_TI_FM_APPS := true
+#BOARD_HAVE_FM_RADIO := true
+#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+#BOARD_FM_DEVICE := wl1271
+
+# Enable surfaceflinger bypass (still not ready)
+#COMMON_GLOBAL_CFLAGS += -DUSE_COMPOSITION_BYPASS
+
+BOARD_NEEDS_CUTILS_LOG := true
