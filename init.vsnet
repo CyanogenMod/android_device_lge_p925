@@ -1,20 +1,42 @@
 #!/system/bin/sh
 
 cid=$1
+cmd=$2
 ifaceid=$(($cid-1))
 
 VSNET_IP=`/system/bin/getprop net.pdp$cid.ip`
-/system/bin/log -t vsnet "Starting vsnet$ifaceid($VSNET_IP) for cid=$cid"
+IFNAME=`/system/bin/getprop net.pdp$cid.name`
 
-ifconfig vsnet$ifaceid $VSNET_IP || {
-    /system/bin/log -t vsnet "ifconfig for vsnet$ifaceid failed";
-    /system/bin/setprop "net.pdp$cid.svc_done" "0";
-    exit 1;
-}
+case "$cmd" in
 
-route add default dev vsnet$ifaceid
-/system/bin/log -t vsnet "ifconfig for vsnet$ifaceid finished successfully";
-/system/bin/setprop "net.vsnet$ifaceid.local-ip" $VSNET_IP
-/system/bin/setprop "net.vsnet$ifaceid.remote-ip" $VSNET_IP
-/system/bin/setprop net.interfaces.defaultroute gprs
-/system/bin/setprop "net.pdp$cid.svc_done" "1"
+    down)
+	/system/bin/log -t rmnet "Stopping $IFNAME($VSNET_IP) for cid=$cid"
+	/system/bin/ifconfig $IFNAME down || {
+		/system/bin/log -t rmnet "ERROR: ifconfig unable to down $IFNAME interface";
+		/system/bin/setprop "net.pdp$cid.svc_down_done" "0";
+		exit 1;
+	}
+
+	/system/bin/log -t rmnet "$IFNAME is down successfully";
+	/system/bin/setprop "net.$IFNAME.local-ip" ""
+	/system/bin/setprop "net.$IFNAME.remote-ip" ""
+	/system/bin/setprop "net.pdp$cid.svc_down_done" "1"
+	;;
+
+    *)
+	/system/bin/log -t rmnet "Starting $IFNAME($VSNET_IP) for cid=$cid"
+
+	ifconfig $IFNAME $VSNET_IP || {
+		/system/bin/log -t rmnet "ifconfig for $IFNAME failed";
+		/system/bin/setprop "net.pdp$cid.svc_done" "0";
+		exit 1;
+	}
+
+	route add default dev $IFNAME
+	/system/bin/log -t rmnet "ifconfig for $IFNAME finished successfully";
+	/system/bin/setprop "net.$IFNAME.local-ip" $VSNET_IP
+	/system/bin/setprop "net.$IFNAME.remote-ip" $VSNET_IP
+	/system/bin/setprop net.interfaces.defaultroute gprs
+	/system/bin/setprop "net.pdp$cid.svc_done" "1"
+	;;
+esac

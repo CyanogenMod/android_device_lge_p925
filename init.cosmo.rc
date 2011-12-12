@@ -869,7 +869,13 @@ service ifcfg_tiap /system/bin/ifconfig tiap0 192.168.43.1 netmask 255.255.255.0
     disabled
     oneshot
 
-service rawip_vsnet1 /system/bin/init.vsnet 1
+service rawip_rmnet1 /system/bin/init.vsnet 1 up
+   user root
+   group radio cache inet misc net_admin net_raw
+   disabled
+   oneshot
+
+service rmnet1_down /system/bin/init.vsnet 1 down
    user root
    group radio cache inet misc net_admin net_raw
    disabled
