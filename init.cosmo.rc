@@ -431,14 +431,14 @@ on fs
     write /sys/devices/system/cpu/cpu0/cpufreq/boost_cpufreq 1
     write /sys/devices/system/cpu/cpufreq/hotplug/boost_timeout 3000000
 
-    mount ext3 /dev/block/mmcblk0p7 /system ro noatime data=ordered wait
-    mount ext3 /dev/block/mmcblk0p8 /data nosuid nodev noatime data=ordered wait
+    mount ext4 /dev/block/mmcblk0p7 /system ro noatime barrier=1 wait
+    mount ext4 /dev/block/mmcblk0p8 /data nosuid nodev noatime barrier=1 wait
     chown system system /data
     chmod 0771 /data
-    mount ext3 /dev/block/mmcblk0p14 /misc nosuid nodev noatime data=ordered
+    mount ext4 /dev/block/mmcblk0p14 /misc nosuid nodev noatime barrier=1
     chown system misc /misc
     chmod 0771 /misc
-    mount ext3 /dev/block/mmcblk0p10 /cache nosuid nodev noatime data=ordered
+    mount ext4 /dev/block/mmcblk0p10 /cache nosuid nodev noatime barrier=1
     chown system cache /cache
     chmod 0770 /cache
     #mount ext3 /dev/block/mmcblk0p11 /lgdrm nosuid nodev noatime data=ordered
@@ -671,11 +671,12 @@ on boot
 
 # Define TCP buffer sizes for various networks
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
-    setprop net.tcp.buffersize.default 4096,87380,110208,4096,16384,110208
-    setprop net.tcp.buffersize.wifi    4095,87380,110208,4096,16384,110208
-    setprop net.tcp.buffersize.umts    4094,87380,110208,4096,16384,110208
-    setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
-    setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
+    setprop net.tcp.buffersize.default 4096,393216,705000,4096,16384,110208
+    setprop net.tcp.buffersize.wifi    4095,393216,705000,4096,16384,110208
+    setprop net.tcp.buffersize.umts    4094,393216,705000,4096,16384,110208
+    setprop net.tcp.buffersize.edge    4093,26280,705000,4096,16384,35040
+    setprop net.tcp.buffersize.gprs    4092,8760,705000,4096,8760,11680
+    setprop net.tcp.buffersize.hspa    4094,393216,705000,4096,8760,110208
 
 ### LGE GPS
 # gps permissions
