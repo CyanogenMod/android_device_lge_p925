@@ -679,16 +679,12 @@ on boot
 
 ### LGE GPS
 # gps permissions
-    chown system system /sys/devices/platform/cosmo_gps_gpio/poweron
-    chown system system /sys/devices/platform/cosmo_gps_gpio/reset
-    mkdir /data/gps
-    chmod 777 /data/gps
-    mkdir /data/gps/var
-    chmod 777 /data/gps/var
-    mkdir /data/gps/var/run
-    chmod 777 /data/gps/var/run
-    mkdir /data/gps/log
-    chmod 777 /data/gps/log
+    chown system system /sys/devices/platform/gps_gpio/poweron
+    chown system system /sys/devices/platform/gps_gpio/reset
+    mkdir /data/gps 0775 system net_raw
+    mkdir /data/gps/var 0775 system net_raw
+    mkdir /data/gps/run 0775 system net_raw
+    mkdir /data/gps/log 0770 system net_raw
     mkdir /data/cache
     chmod 777 /data/cache
 
