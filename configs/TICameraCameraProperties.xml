@@ -171,7 +171,7 @@
 <prop-s3d-frame-layout-values>tb_full,ss_full,tb_subsampled,ss_subsampled</prop-s3d-frame-layout-values>
 <prop-s3d2d-preview>off</prop-s3d2d-preview>
 <prop-s3d2d-preview-values>on,off</prop-s3d2d-preview-values>
-<prop-preview-size-values>3840x1080,1920x1080,2560x720,1280x720,1440x480,720x480,1280x480,640x480,640x240,320x240,352x144,176x144</prop-preview-size-values>
+<prop-preview-size-values>3840x1080,1920x1080,2048x1536,2560x720,1280x720,1440x480,720x480,1280x480,1024x768,640x480,640x240,320x240,352x144,176x144</prop-preview-size-values>
 <prop-preview-format-values>yuv422i-yuyv,yuv420sp,rgb565</prop-preview-format-values>
 <prop-preview-frame-rate-values>30,25,24,20,15,10</prop-preview-frame-rate-values>
 <prop-zoom-ratios>100,104,107,111,115,119,123,127,132,137,141,146,152,157,162,168,174,180,187,193,200,207,214,222,230,238,246,255,264,273,283,293,303,314,325,336,348,361,373,386,400,414,429,444,459,476,492,510,528,546,566,586,606,628,650,673,696,721,746,773,800</prop-zoom-ratios>
@@ -205,7 +205,7 @@
 <prop-preview-frame-rate-default>30</prop-preview-frame-rate-default>
 <prop-zoom-default>0</prop-zoom-default>
 <prop-picture-size-default>2048x1536</prop-picture-size-default>
-<prop-picture-format-default>jpeg</prop-picture-format-default>
+<prop-picture-format-default>jps</prop-picture-format-default>
 <prop-jpeg-thumbnail-size-default>160x120</prop-jpeg-thumbnail-size-default>
 <prop-jpeg-thumbnail-quality-default>60</prop-jpeg-thumbnail-quality-default>
 <prop-whitebalance-default>auto</prop-whitebalance-default>
