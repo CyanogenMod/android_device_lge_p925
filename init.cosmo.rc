@@ -716,7 +716,7 @@ on property:ro.secure=0
     start console
 
 # Lazy way go get things done when /system(/build.prop) is up
-on property:ro.product.device=p920
+on property:ro.product.device=p925
     start enable-tiwlink
     wait /sys/class/rfkill/rfkill0/type
     start uim

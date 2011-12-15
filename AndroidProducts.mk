@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/p920.mk
+    $(LOCAL_DIR)/p925.mk

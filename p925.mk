@@ -1,14 +1,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product-if-exists, vendor/lge/p920/p920-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/p925/p925-vendor.mk)
 
 $(call inherit-product, device/common/gps/gps_eu.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/lge/p920/overlay
+DEVICE_PACKAGE_OVERLAYS += device/lge/p925/overlay
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/lge/p920/kernel
+	LOCAL_KERNEL := device/lge/p925/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/setup-recovery:system/bin/setup-recovery \
     $(LOCAL_PATH)/prebuilt/enable-tiwlink:system/bin/enable-tiwlink \
     $(LOCAL_PATH)/init.cosmo.rc:root/init.rc \
-    $(LOCAL_PATH)/init.dummy.rc:root/init.p920.rc \
+    $(LOCAL_PATH)/init.dummy.rc:root/init.p925.rc \
     $(LOCAL_PATH)/ueventd.omap4430.rc:root/ueventd.omap4430.rc \
     $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab
 
@@ -85,7 +85,7 @@ PRODUCT_PACKAGES += \
     wlan_cu \
     tiap_loader \
     tiap_cu \
-    gps.p920 \
+    gps.p925 \
     acoustics.default \
     hwprops
 
@@ -119,7 +119,7 @@ PRODUCT_PACKAGES += \
 
 # Tiler and Syslink
 PRODUCT_PACKAGES += \
-    overlay.p920 \
+    overlay.p925 \
     alsa.omap4 \
     libaudiomodemgeneric \
     libcamera \
@@ -170,6 +170,6 @@ PRODUCT_PACKAGES += \
     wifimac
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := p920
-PRODUCT_DEVICE := p920
-PRODUCT_MODEL := LG Optimus 3D
+PRODUCT_NAME := p925
+PRODUCT_DEVICE := p925
+PRODUCT_MODEL := LG Thrill
