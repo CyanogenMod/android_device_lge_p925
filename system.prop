@@ -36,7 +36,9 @@ ro.com.google.clientidbase.am=android-lge
 ## Config the microphones
 omap.audio.mic.main=AMic0
 omap.audio.mic.sub=AMic1
-omap.audio.power=PingPong
+omap.audio.power=HQ
+alsa.mixer.playback.master=DAC2 Analog
+alsa.mixer.capture.master=Analog
 
 ## Add additional storage expansion
 ro.additionalmounts=/mnt/emmc
