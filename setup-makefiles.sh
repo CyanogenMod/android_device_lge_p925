@@ -95,16 +95,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmllite.so:system/lib/libmllite.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmlplatform.so:system/lib/libmlplatform.so
 
-# Audio
-PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/alsa.omap4.so:system/lib/hw/alsa.omap4.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libacousticengine.so:system/lib/libacousticengine.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmmclient.so:system/lib/libmmclient.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudiomodemgeneric.so:system/lib/libaudiomodemgeneric.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudiopolicy.so:system/lib/libaudiopolicy.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudio.so:obj/lib/libaudio.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libaudio.so:system/lib/libaudio.so
-
 # Wifi
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wifi/firmware.bin:system/etc/wifi/firmware.bin \\
