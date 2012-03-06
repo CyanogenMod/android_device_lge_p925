@@ -79,12 +79,9 @@ endif
 
 #BOARD_NEEDS_CUTILS_LOG := true
 
-#BUILD_FM_RADIO := true
-#FM_CHR_DEV_ST := true
-#BUILD_TI_FM_APPS := true
-#BOARD_HAVE_FM_RADIO := true
-#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
-#BOARD_FM_DEVICE := wl1271
+BUILD_FM_RADIO := true
+FM_CHR_DEV_ST := true
+BUILD_TI_FM_APPS := true
 
 # Enable surfaceflinger bypass (still not ready)
 #COMMON_GLOBAL_CFLAGS += -DUSE_COMPOSITION_BYPASS
